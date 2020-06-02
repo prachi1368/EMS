@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 12.12.3
+cache: npm
+
+install: npm cli
+
+script:
+  - npm test
+  - npm run build
+
+deploy:
+  deploy: pages
+  skip-cleanup: true
+  githu-token: $GITHUB_TOKEN
+  on:
+    branches: master
